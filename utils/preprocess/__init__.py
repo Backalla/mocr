@@ -14,12 +14,12 @@ def binarize(image_path):
     image_gaussian = cv2.GaussianBlur(image_object,(5,5),0)
     # image_show(image_gaussian,"Gaussian blurred")
     (thresh,im_bw_gaussian) = cv2.threshold(image_gaussian, 128, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
-    (thresh, im_bw) = cv2.threshold(image_object, 128, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
+    # (thresh, im_bw) = cv2.threshold(image_object, 128, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
     # print thresh
     # image_show(im_bw,"Binary")
     # image_show(im_bw_gaussian,"Binary Gaussian")
-    kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
-    im_sharp = cv2.filter2D(im_bw, -1, kernel)
+    # kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
+    # im_sharp = cv2.filter2D(im_bw, -1, kernel)
     # image_show(im_sharp,"Sharpened")
     return im_bw_gaussian
 
